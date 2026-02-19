@@ -1,0 +1,15 @@
+[Unit]
+Description=Ralph Pro Daily Digest
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/johnlane/ralph-pro/monitor/daily-digest.sh
+Environment=HOME=/home/johnlane
+Environment=PATH=/home/johnlane/.local/bin:/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/home/johnlane/ralph-pro
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

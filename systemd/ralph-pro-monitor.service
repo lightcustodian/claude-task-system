@@ -1,0 +1,15 @@
+[Unit]
+Description=Ralph Pro Overnight Monitor
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/johnlane/ralph-pro/overnight-monitor.sh check
+Environment=HOME=/home/johnlane
+Environment=PATH=/home/johnlane/.local/bin:/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/home/johnlane/ralph-pro
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=Ralph Pro Failure Handler — invokes Claude to investigate and fix
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/johnlane/ralph-pro/overnight-monitor.sh failure
+Environment=HOME=/home/johnlane
+Environment=PATH=/home/johnlane/.local/bin:/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/home/johnlane/ralph-pro
+StandardOutput=journal
+StandardError=journal
