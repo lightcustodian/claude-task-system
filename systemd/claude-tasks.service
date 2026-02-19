@@ -6,7 +6,7 @@ Requires=rclone-gdrive.service
 
 [Service]
 Type=simple
-ExecStart=/home/johnlane/projects/openclaw-alternative/src/supervisor.sh
+ExecStart=/home/johnlane/projects/claude-task-system/cts-v2/src/supervisor.sh
 Restart=on-failure
 RestartSec=10
 Environment=HOME=/home/johnlane

@@ -1,0 +1,10 @@
+[Unit]
+Description=CTS Heartbeat Tier 3 — Daily at 06:00
+
+[Timer]
+OnCalendar=*-*-* 06:00:00
+Persistent=true
+AccuracySec=5min
+
+[Install]
+WantedBy=timers.target

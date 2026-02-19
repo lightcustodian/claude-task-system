@@ -1,0 +1,15 @@
+[Unit]
+Description=CTS Health Monitor
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/home/johnlane/projects/claude-task-system/cts-v2/src/health-monitor.sh
+Environment=HOME=/home/johnlane
+Environment=PATH=/home/johnlane/.local/bin:/usr/local/bin:/usr/bin:/bin
+WorkingDirectory=/home/johnlane/projects/claude-task-system
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
