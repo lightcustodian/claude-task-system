@@ -84,9 +84,9 @@ _llm_get_config() {
 _llm_default_invoker() {
     local llm_name="$1"
 
-    # For now, all invokers are in src/invokers/
-    # If LLM_<NAME>_INVOKER is not set in config, construct default
-    echo "src/invokers/invoke-${llm_name}.sh"
+    # Use SCRIPT_DIR (set by config.sh) for absolute path to invokers
+    local invoker_dir="${SCRIPT_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}/invokers"
+    echo "${invoker_dir}/invoke-${llm_name}.sh"
 }
 
 # Check if LLM has exhausted token quota
